@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        <!-- {{ form.hidden_tag() }} -->
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Record the weather!</legend>
+            <div class="form-group">
+                {{ form.date_taken.label(class="form-control-label") }}
+
+                {% if form.date_taken.errors %}
+                    {{ form.date_taken(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.date_taken.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.date_taken(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.temperature_high.label(class="form-control-label") }}
+                {{ form.temperature_high(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.temperature_low.label(class="form-control-label") }}
+                {{ form.temperature_low(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.rain_mm.label(class="form-control-label") }}
+                {{ form.rain_mm(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.wind_kmh.label(class="form-control-label") }}
+                {{ form.wind_kmh(class="form-control form-control-lg") }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+<div class="border-top pt-3">
+    <small class="text-muted">
+        Created by <a class="ml-2" href="https://www.github.com/thormeg">Thormeg</a>
+    </small>
+</div>
+{% endblock content %}
