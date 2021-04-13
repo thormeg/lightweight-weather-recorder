@@ -2,7 +2,7 @@
 {% block content %}
 <div class="content-section">
     <form method="POST" action="">
-        <!-- {{ form.hidden_tag() }} -->
+        {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Record the weather!</legend>
             <div class="form-group">
@@ -28,8 +28,8 @@
                 {{ form.temperature_low(class="form-control form-control-lg") }}
             </div>
             <div class="form-group">
-                {{ form.rain_mm.label(class="form-control-label") }}
-                {{ form.rain_mm(class="form-control form-control-lg") }}
+                {{ form.rainfall_mm.label(class="form-control-label") }}
+                {{ form.rainfall_mm(class="form-control form-control-lg") }}
             </div>
             <div class="form-group">
                 {{ form.wind_kmh.label(class="form-control-label") }}

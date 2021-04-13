@@ -5,3 +5,4 @@ flake8-builtins==1.5.3
 flake8-docstrings==1.5.0
 flake8-import-order==0.18.1
 python-dotenv==0.16.0
+flask-admin==1.5.7

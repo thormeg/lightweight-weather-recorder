@@ -6,9 +6,9 @@ from weather_recorder.models import Weather
 main = Blueprint('main', __name__)
 
 
-@main.route("/", methods=['POST'])
-@main.route("/home", methods=['POST'])
-@main.route("/index", methods=['POST'])
+@main.route("/", methods=['GET', 'POST'])
+@main.route("/home", methods=['GET', 'POST'])
+@main.route("/index", methods=['GET', 'POST'])
 def home():
     form = WeatherForm()
     if form.validate_on_submit():
@@ -17,7 +17,7 @@ def home():
             temperature_low=form.temperature_low.data,
             temperature_high=form.temperature_high.data,
             wind_kmh=form.wind_kmh.data,
-            rain_mm=form.rain_mm.data)
+            rainfall_mm=form.rainfall_mm.data)
         db.session.add(weather_report)
         db.session.commit()
         flash('Your weather reading has been successfully saved.', 'success')
