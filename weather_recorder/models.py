@@ -9,6 +9,9 @@ class Weather(db.Model):
     temperature_high = db.Column(db.Integer, nullable=False)
     wind_kmh = db.Column(db.Integer, nullable=False)
     rainfall_mm = db.Column(db.Integer, nullable=False)
+    wind_direction = db.Column(db.Integer, nullable=False)
+    pressure = db.Column(db.Integer, nullable=True)
+
 
     def __repr__(self):
         return (f"{self.date_taken}, {self.temperature_high}")

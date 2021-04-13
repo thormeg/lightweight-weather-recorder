@@ -2,6 +2,7 @@ from flask import render_template, url_for, flash, redirect, Blueprint
 from weather_recorder import db
 from weather_recorder.main.forms import WeatherForm
 from weather_recorder.models import Weather
+from weather_recorder.main.wind_directions import wind_directions
 
 main = Blueprint('main', __name__)
 
@@ -17,7 +18,9 @@ def home():
             temperature_low=form.temperature_low.data,
             temperature_high=form.temperature_high.data,
             wind_kmh=form.wind_kmh.data,
-            rainfall_mm=form.rainfall_mm.data)
+            rainfall_mm=form.rainfall_mm.data,
+            wind_direction=form.wind_direction.data,
+            pressure=form.pressure.data)
         db.session.add(weather_report)
         db.session.commit()
         flash('Your weather reading has been successfully saved.', 'success')
