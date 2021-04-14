@@ -14,4 +14,6 @@ class Weather(db.Model):
 
 
     def __repr__(self):
-        return (f"{self.date_taken}, {self.temperature_high}")
+        return (f"{self.date_taken}, {self.temperature_low}, {self.temperature_high}"
+        f" {self.wind_kmh}, {self.rainfall_mm}, {self.wind_direction}"
+        f" {self.pressure}")
