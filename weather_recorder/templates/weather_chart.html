@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<canvas id="myChart" width="800" height="800" style="border:1px solid #000000;"></canvas>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(document.getElementById("myChart"), {
+        type: 'bar',
+        data: {
+            labels: {{ labels|tojson }},
+            datasets: [
+                {
+                    label: "Temp Low",
+                    backgroundColor: "#3e95cd",
+                    data: {{ temps_low|tojson }}
+                }, {
+                    label: "Temp High",
+                    backgroundColor: "#8e5ea2",
+                    data: {{ temps_high|tojson }}
+                }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Temperature low-high'
+            }
+        }
+    });
+
+</script>
+{% endblock content %}

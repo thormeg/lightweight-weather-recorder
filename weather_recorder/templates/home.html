@@ -37,7 +37,16 @@
             </div>
             <div class="form-group">
                 {{ form.wind_direction.label(class="form-control-label") }}
-                {{ form.wind_direction(class="form-control form-control-lg") }}
+                {% if form.wind_direction.errors %}
+                    {{ form.wind_direction(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.wind_direction.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.wind_direction(class="form-control form-control-lg") }}
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.pressure.label(class="form-control-label") }}
