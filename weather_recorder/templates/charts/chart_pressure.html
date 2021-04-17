@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<canvas id="bar-chart" width="800" height="800" style="border:1px solid #000000;"></canvas>
+<script>
+    var ctx = document.getElementById('bar-chart').getContext('2d');
+    var myChart = new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: {{ labels|tojson }},
+      datasets: [
+        {
+          label: "Pressure (bars)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: {{ pressure|tojson }}
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Atmospheric pressure (bars)'
+      }
+    }
+});
+
+</script>
+{% endblock content %}
