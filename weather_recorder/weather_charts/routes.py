@@ -1,9 +1,11 @@
-from flask import Blueprint, render_template, request
-from typing import List, NamedTuple 
+from typing import List, NamedTuple
+
+from flask import Blueprint, render_template
 from weather_recorder import db
 from weather_recorder.models import Weather
 
 weather_charts = Blueprint('weather_charts', __name__)
+
 
 class WeatherRecords(NamedTuple):
     dates: List

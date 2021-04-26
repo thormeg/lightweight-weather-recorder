@@ -1,8 +1,7 @@
-from flask import render_template, url_for, flash, redirect, Blueprint
+from flask import Blueprint, flash, redirect, render_template, url_for
 from weather_recorder import db
 from weather_recorder.main.forms import WeatherForm
 from weather_recorder.models import Weather
-from weather_recorder.main.wind_directions import wind_directions
 
 main = Blueprint('main', __name__)
 

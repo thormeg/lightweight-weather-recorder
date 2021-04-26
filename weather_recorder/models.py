@@ -2,6 +2,7 @@ from datetime import date
 
 from weather_recorder import db
 
+
 class Weather(db.Model):
     reading_id = db.Column(db.Integer, primary_key=True)
     date_taken = db.Column(db.DateTime, nullable=False, default=date.today())
@@ -12,8 +13,7 @@ class Weather(db.Model):
     wind_direction = db.Column(db.Integer, nullable=False)
     pressure = db.Column(db.Integer, nullable=True)
 
-
     def __repr__(self):
         return (f"{self.date_taken}, {self.temperature_low}, {self.temperature_high}"
-        f" {self.wind_kmh}, {self.rainfall_mm}, {self.wind_direction}"
-        f" {self.pressure}")
+                f" {self.wind_kmh}, {self.rainfall_mm}, {self.wind_direction}"
+                f" {self.pressure}")

@@ -1,10 +1,11 @@
-from datetime import date, datetime
+from datetime import date
+
 from flask_wtf import FlaskForm
 from weather_recorder.main.date_formatter.date_formatter import format_date
-from wtforms import DateField, IntegerField, StringField, SubmitField
-from wtforms.validators import ValidationError
 from weather_recorder.main.wind_directions import wind_directions
 from weather_recorder.models import Weather
+from wtforms import DateField, IntegerField, StringField, SubmitField
+from wtforms.validators import ValidationError
 
 
 def validate_date(form, date_taken):
