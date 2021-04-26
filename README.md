@@ -1,4 +1,4 @@
-# flask-weather-recorder
+# Lightweight weather recorder
 A small weather recording application built from a Flask backend utilising Bootstrap for styling and CSS on the frontend.
 
 ![image](https://user-images.githubusercontent.com/66360292/116109223-e1599280-a6b4-11eb-9e75-e43fd173c93c.png)
